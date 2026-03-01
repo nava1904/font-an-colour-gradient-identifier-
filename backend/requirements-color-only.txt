@@ -1,0 +1,10 @@
+# Lightweight deps for color extraction only (no font model).
+# Use if full requirements.txt fails (e.g. disk space).
+# Font identification will show "model unavailable" but colors work.
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.6
+Pillow>=10.0.0
+opencv-python-headless>=4.9.0
+numpy>=1.24.0
+scikit-image>=0.22.0
