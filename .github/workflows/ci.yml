@@ -56,12 +56,7 @@ jobs:
         run: pip install -r requirements-color-only.txt
 
       - name: Verify imports
-        run: python -c "
-from app.main import app
-from app.services.color_service import extract_all_colors
-from app.utils.color_ops import rgb_to_hex
-print('Backend imports OK')
-"
+        run: python -c "from app.main import app; from app.services.color_service import extract_all_colors; from app.utils.color_ops import rgb_to_hex; print('Backend imports OK')"
 
       - name: Health check
         run: |
