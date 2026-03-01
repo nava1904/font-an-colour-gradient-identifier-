@@ -1,0 +1,9 @@
+# Render Blueprint - deploy backend from Render dashboard
+# Connect repo at https://dashboard.render.com and add "Blueprint"
+services:
+  - type: web
+    name: font-color-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements-color-only.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT

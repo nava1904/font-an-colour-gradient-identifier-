@@ -52,3 +52,8 @@ Open [http://localhost:3000](http://localhost:3000). The frontend proxies reques
 
 - **Backend**: FastAPI, OpenCV, scikit-image, Hugging Face Transformers (font classifier)
 - **Frontend**: Next.js, TypeScript, Tailwind CSS
+
+## CI/CD
+
+- **GitHub Actions** (`.github/workflows/ci.yml`): Lint and build frontend, validate backend on push/PR
+- **Render** (`render.yaml`): Blueprint for one-click backend deployment
