@@ -3,6 +3,8 @@
 from typing import Dict, Any, Optional
 from io import BytesIO
 
+from PIL import Image
+
 # Lazy load to avoid slow startup
 _classifier = None
 _classifier_error: Optional[str] = None
@@ -42,7 +44,7 @@ def identify_font(image_bytes: bytes) -> Dict[str, Any]:
                 "alternatives": [],
                 "error": f"Font model unavailable: {_classifier_error or 'Not loaded'}",
             }
-        img = BytesIO(image_bytes)
+        img = Image.open(BytesIO(image_bytes)).convert("RGB")
         results = classifier(img)
 
         if not results:
